@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cheese Tasting Sheet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2em;
+      line-height: 1.5;
+    }
+
+    h1 {
+      font-size: 1.8em;
+      text-align: center;
+      margin-bottom: 1.5em;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 2em;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 0.4em;
+      vertical-align: top;
+    }
+
+    input[type="text"], textarea {
+      width: 100%;
+      box-sizing: border-box;
+      font-family: inherit;
+    }
+
+    .section {
+      margin-bottom: 2em;
+    }
+
+    .scale {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4em;
+    }
+
+    .scale .inputs {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .scale .labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9em;
+    }
+
+    .checkbox-inline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;
+    }
+
+    .row-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;
+    }
+
+    .grouped {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;
+    }
+
+    .grouped-item {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    @media (max-width: 600px) {
+      .checkbox-inline,
+      .row-group,
+      .grouped {
+        flex-direction: column;
+      }
+
+      textarea {
+        height: 5em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<h1>Cheese Tasting Sheet</h1>
+
+<!-- Cheese identity section -->
+<table>
+  <colgroup>
+    <col style="width: 33.33%;" />
+    <col style="width: 0%;" />
+    <col style="width: 33.33%;" />
+    <col style="width: 0%;" />
+    <col style="width: 33.33%;" />
+  </colgroup>
+  <tr style="background-color: #fff2cc;">
+    <th>Name of Cheese</th>
+    <th></th>
+    <th>Cheesemaker / Country / Region</th>
+    <th></th>
+    <th>Date Tasted</th>
+  </tr>
+  <tr>
+    <td></td><td></td><td></td><td></td><td></td>
+  </tr>
+  <tr><td colspan="5" style="height: 1.5em; border: none;"></td></tr>
+  <tr style="background-color: #fff2cc;">
+    <th>Where Bought</th>
+    <th></th>
+    <th>Cost</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <tr>
+    <td></td><td></td><td></td><td></td><td></td>
+  </tr>
+</table>
+
+<div class="section">
+  <strong>Milk Type:</strong>
+  <div class="row-group">
+    <div>
+      <label><input type="radio" name="animal" /> Cow</label>
+      <label><input type="radio" name="animal" /> Goat</label>
+      <label><input type="radio" name="animal" /> Sheep</label>
+      <label><input type="radio" name="animal" /> Buffalo</label>
+      <label><input type="radio" name="animal" /> Other</label>
+    </div>
+    <div style="margin-left: 2em;">
+      <label><input type="radio" name="treatment" /> Raw</label>
+      <label><input type="radio" name="treatment" /> Pasteurised</label>
+      <label><input type="radio" name="treatment" /> Unknown</label>
+    </div>
+  </div>
+</div>
+
+<!-- Smell -->
+<div class="section">
+  <strong>Smell:</strong>
+  <table style="width: 100%; border-collapse: collapse; margin-top: 0.5em; table-layout: fixed;">
+    <colgroup>
+      <col style="width: 45%;" />
+      <col style="width: 10%;" />
+      <col style="width: 45%;" />
+    </colgroup>
+    <tr>
+      <th style="text-align: left; padding: 0.6em;">Intensity</th>
+      <th style="border: none; background-color: white;"></th>
+      <th style="text-align: left; padding: 0.6em;">Ammonia</th>
+    </tr>
+    <tr>
+      <td style="padding: 0.6em;">
+        <div class="scale">
+          <div class="inputs">
+            <label><input type="radio" name="smell_intensity" />0</label>
+            <label><input type="radio" name="smell_intensity" />1</label>
+            <label><input type="radio" name="smell_intensity" />2</label>
+            <label><input type="radio" name="smell_intensity" />3</label>
+            <label><input type="radio" name="smell_intensity" />4</label>
+            <label><input type="radio" name="smell_intensity" />5</label>
+            <label><input type="radio" name="smell_intensity" />6</label>
+            <label><input type="radio" name="smell_intensity" />7</label>
+            <label><input type="radio" name="smell_intensity" />8</label>
+            <label><input type="radio" name="smell_intensity" />9</label>
+            <label><input type="radio" name="smell_intensity" />10</label>
+          </div>
+          <div class="labels">
+            <span>Low</span><span>High</span>
+          </div>
+        </div>
+      </td>
+      <td style="border: none; background-color: white;"></td>
+      <td style="padding: 0.6em;">
+        <div class="scale">
+          <div class="inputs">
+            <label><input type="radio" name="ammonia" />0</label>
+            <label><input type="radio" name="ammonia" />1</label>
+            <label><input type="radio" name="ammonia" />2</label>
+            <label><input type="radio" name="ammonia" />3</label>
+            <label><input type="radio" name="ammonia" />4</label>
+            <label><input type="radio" name="ammonia" />5</label>
+            <label><input type="radio" name="ammonia" />6</label>
+            <label><input type="radio" name="ammonia" />7</label>
+            <label><input type="radio" name="ammonia" />8</label>
+            <label><input type="radio" name="ammonia" />9</label>
+            <label><input type="radio" name="ammonia" />10</label>
+          </div>
+          <div class="labels">
+            <span>Low</span><span>High</span>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+  <textarea style="margin-top: 1em;">Comment (refer to flavour tree if required):</textarea>
+</div>
+
+
+<!-- (…Flavour, texture, consistency, aftertaste and footer follow…) -->
+<div class="section">
+  <strong>Flavour:</strong>
+  <div class="grouped">
+    <div class="grouped-item">
+      Sweet:<br />
+      <div class="scale">
+        <div class="inputs">
+          <label><input type="radio" name="sweet" />0</label>
+          <label><input type="radio" name="sweet" />1</label>
+          <label><input type="radio" name="sweet" />2</label>
+          <label><input type="radio" name="sweet" />3</label>
+          <label><input type="radio" name="sweet" />4</label>
+          <label><input type="radio" name="sweet" />5</label>
+          <label><input type="radio" name="sweet" />6</label>
+          <label><input type="radio" name="sweet" />7</label>
+          <label><input type="radio" name="sweet" />8</label>
+          <label><input type="radio" name="sweet" />9</label>
+          <label><input type="radio" name="sweet" />10</label>
+        </div>
+      </div>
+    </div>
+    <div class="grouped-item">
+      Salt:<br />
+      <div class="scale">
+        <div class="inputs">
+          <label><input type="radio" name="salt" />0</label>
+          <label><input type="radio" name="salt" />1</label>
+          <label><input type="radio" name="salt" />2</label>
+          <label><input type="radio" name="salt" />3</label>
+          <label><input type="radio" name="salt" />4</label>
+          <label><input type="radio" name="salt" />5</label>
+          <label><input type="radio" name="salt" />6</label>
+          <label><input type="radio" name="salt" />7</label>
+          <label><input type="radio" name="salt" />8</label>
+          <label><input type="radio" name="salt" />9</label>
+          <label><input type="radio" name="salt" />10</label>
+        </div>
+      </div>
+    </div>
+    <div class="grouped-item">
+      Acid:<br />
+      <div class="scale">
+        <div class="inputs">
+          <label><input type="radio" name="acid" />0</label>
+          <label><input type="radio" name="acid" />1</label>
+          <label><input type="radio" name="acid" />2</label>
+          <label><input type="radio" name="acid" />3</label>
+          <label><input type="radio" name="acid" />4</label>
+          <label><input type="radio" name="acid" />5</label>
+          <label><input type="radio" name="acid" />6</label>
+          <label><input type="radio" name="acid" />7</label>
+          <label><input type="radio" name="acid" />8</label>
+          <label><input type="radio" name="acid" />9</label>
+          <label><input type="radio" name="acid" />10</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grouped" style="margin-top: 1em;">
+    <div class="grouped-item">
+      Bitter:<br />
+      <div class="scale">
+        <div class="inputs">
+          <label><input type="radio" name="bitter" />0</label>
+          <label><input type="radio" name="bitter" />1</label>
+          <label><input type="radio" name="bitter" />2</label>
+          <label><input type="radio" name="bitter" />3</label>
+          <label><input type="radio" name="bitter" />4</label>
+          <label><input type="radio" name="bitter" />5</label>
+          <label><input type="radio" name="bitter" />6</label>
+          <label><input type="radio" name="bitter" />7</label>
+          <label><input type="radio" name="bitter" />8</label>
+          <label><input type="radio" name="bitter" />9</label>
+          <label><input type="radio" name="bitter" />10</label>
+        </div>
+      </div>
+    </div>
+    <div class="grouped-item">
+      Umami:<br />
+      <div class="scale">
+        <div class="inputs">
+          <label><input type="radio" name="umami" />0</label>
+          <label><input type="radio" name="umami" />1</label>
+          <label><input type="radio" name="umami" />2</label>
+          <label><input type="radio" name="umami" />3</label>
+          <label><input type="radio" name="umami" />4</label>
+          <label><input type="radio" name="umami" />5</label>
+          <label><input type="radio" name="umami" />6</label>
+          <label><input type="radio" name="umami" />7</label>
+          <label><input type="radio" name="umami" />8</label>
+          <label><input type="radio" name="umami" />9</label>
+          <label><input type="radio" name="umami" />10</label>
+        </div>
+      </div>
+    </div>
+    <div class="grouped-item">
+      <textarea>Comment (refer to flavour tree if required):</textarea>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <strong>Rind:</strong>
+  <div class="checkbox-inline">
+    <label><input type="checkbox" /> Bloomy</label>
+    <label><input type="checkbox" /> Washed</label>
+    <label><input type="checkbox" /> Natural</label>
+    <label><input type="checkbox" /> Waxed</label>
+    <label><input type="checkbox" /> Clothbound</label>
+    <label><input type="checkbox" /> Smoked</label>
+    <label><input type="checkbox" /> None</label>
+    <label><input type="checkbox" /> Other</label>
+  </div>
+</div>
+
+<div class="section">
+  <strong>Texture:</strong>
+  <div class="checkbox-inline">
+    <label><input type="checkbox" /> Crumbly</label>
+    <label><input type="checkbox" /> Chalky</label>
+    <label><input type="checkbox" /> Creamy</label>
+    <label><input type="checkbox" /> Gooey</label>
+    <label><input type="checkbox" /> Runny</label>
+    <label><input type="checkbox" /> Smooth</label>
+    <label><input type="checkbox" /> Open</label>
+    <label><input type="checkbox" /> Dense</label>
+    <label><input type="checkbox" /> Other</label>
+  </div>
+</div>
+
+<div class="section">
+  <strong>Consistency:</strong>
+  <div class="checkbox-inline">
+    <label><input type="checkbox" /> Dry</label>
+    <label><input type="checkbox" /> Moist</label>
+    <label><input type="checkbox" /> Fudgy</label>
+    <label><input type="checkbox" /> Smooth</label>
+    <label><input type="checkbox" /> Elastic</label>
+    <label><input type="checkbox" /> Sticky</label>
+    <label><input type="checkbox" /> Brittle</label>
+    <label><input type="checkbox" /> Other</label>
+  </div>
+</div>
+
+<div class="section">
+  <strong>Colour:</strong>
+  <div class="checkbox-inline">
+    <label><input type="checkbox" /> White</label>
+    <label><input type="checkbox" /> Yellow</label>
+    <label><input type="checkbox" /> Straw</label>
+    <label><input type="checkbox" /> Golden</label>
+    <label><input type="checkbox" /> Orange</label>
+    <label><input type="checkbox" /> Grey</label>
+    <label><input type="checkbox" /> Blue</label>
+    <label><input type="checkbox" /> Other</label>
+  </div>
+</div>
+<div class="section">
+  <strong>Aftertaste:</strong>
+  <table style="width: 100%; border-collapse: collapse; margin-top: 0.5em; table-layout: fixed;">
+    <colgroup>
+      <col style="width: 33.33%;" />
+      <col style="width: 33.33%;" />
+      <col style="width: 33.34%;" />
+    </colgroup>
+    <tr style="background-color: #f9f9f9;">
+      <th style="text-align: left; padding: 1em;">Complexity</th>
+      <th style="text-align: left; padding: 1em;">Length</th>
+      <th style="text-align: left; padding: 1em;">Ripeness (if mould-ripened)</th>
+    </tr>
+    <tr>
+      <td style="padding: 1em;">
+        <label><input type="radio" name="complexity" /> Low</label><br />
+        <label><input type="radio" name="complexity" /> Medium</label><br />
+        <label><input type="radio" name="complexity" /> High</label>
+      </td>
+      <td style="padding: 1em;">
+        <label><input type="radio" name="length" /> Short</label><br />
+        <label><input type="radio" name="length" /> Medium</label><br />
+        <label><input type="radio" name="length" /> Long</label>
+      </td>
+      <td style="padding: 1em;">
+        <label><input type="radio" name="ripeness" /> Under-ripe</label><br />
+        <label><input type="radio" name="ripeness" /> Ripe</label><br />
+        <label><input type="radio" name="ripeness" /> Over-ripe</label>
+      </td>
+    </tr>
+  </table>
+  <textarea style="margin-top: 1em;">Comment:</textarea>
+</div>
+
+<div class="section">
+  <strong>Would you recommend?</strong>
+  <div class="row-group">
+    <label><input type="radio" name="recommend" /> Yes</label>
+    <label><input type="radio" name="recommend" /> No</label>
+    <label><input type="radio" name="recommend" /> Maybe</label>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script>
+  const supabase = supabase.createClient(
+    'https://kavpehxoqxcsrxyfvhyg.supabase.co',
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImthdnBlaHhvcXhjc3J4eWZ2aHlnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTEwMTEyOTQsImV4cCI6MjA2NjU4NzI5NH0.3xPU3eWEFHwcLQLBKVkco7qpNJv2VDSk8C8NgWx2Ld0'
+  );
+</script>
+
+</body>
+</html>
